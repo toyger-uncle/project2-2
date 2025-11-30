@@ -1,0 +1,2280 @@
+-- Create table
+create table KC29_YS_2
+(
+  akc290   INTEGER not null,
+  akb020   VARCHAR2(14) not null,
+  aac001   VARCHAR2(15) not null,
+  aac002   VARCHAR2(25),
+  aac003   VARCHAR2(20),
+  aac004   VARCHAR2(3),
+  bkc331   VARCHAR2(2000),
+  aac020   VARCHAR2(10),
+  bac332   VARCHAR2(30),
+  bac337   VARCHAR2(10),
+  bac338   DATE,
+  bac339   VARCHAR2(100),
+  bac340   VARCHAR2(3),
+  bac341   VARCHAR2(3),
+  bac342   VARCHAR2(3),
+  bac343   VARCHAR2(3),
+  bac344   VARCHAR2(3),
+  bac345   DATE,
+  bac346   VARCHAR2(50),
+  bac347   VARCHAR2(50),
+  bac348   DATE,
+  bac349   DATE,
+  aae005   VARCHAR2(50),
+  bac350   VARCHAR2(50),
+  aae003   VARCHAR2(100),
+  hz050    INTEGER,
+  akc292   DATE default sysdate,
+  akc293   VARCHAR2(100),
+  aac020_1 VARCHAR2(1000),
+  bac344_1 VARCHAR2(1000),
+  bac337_1 VARCHAR2(100),
+  bac339_1 VARCHAR2(1000),
+  bac353   VARCHAR2(10),
+  bac354   VARCHAR2(3),
+  bac351   DATE,
+  bac352   VARCHAR2(3),
+  bkc331_1 VARCHAR2(4000),
+  aae011   VARCHAR2(20),
+  aae036   DATE default sysdate,
+  aae012   VARCHAR2(20),
+  aae013   VARCHAR2(3),
+  bac355   VARCHAR2(3),
+  bac355_1 VARCHAR2(100),
+  bkf054   VARCHAR2(50),
+  bke049   VARCHAR2(3),
+  aac058   VARCHAR2(3),
+  bke054   VARCHAR2(20),
+  bkf049   VARCHAR2(3),
+  bkf048   VARCHAR2(3),
+  bkf094   DATE,
+  bkf095   DATE,
+  bkf093   VARCHAR2(50)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table KC29_YS_2
+  is '康复审核信息';
+-- Add comments to the columns 
+comment on column KC29_YS_2.akc290
+  is '序号';
+comment on column KC29_YS_2.akb020
+  is '医疗机构编号';
+comment on column KC29_YS_2.aac001
+  is '医护人员编号';
+comment on column KC29_YS_2.aac002
+  is '证件号码';
+comment on column KC29_YS_2.aac003
+  is '姓名';
+comment on column KC29_YS_2.aac004
+  is '性别';
+comment on column KC29_YS_2.bkc331
+  is '执业科别';
+comment on column KC29_YS_2.aac020
+  is '行政职务';
+comment on column KC29_YS_2.bac332
+  is '医师资格证书编号';
+comment on column KC29_YS_2.bac337
+  is '执业医师类别';
+comment on column KC29_YS_2.bac338
+  is '执业资格取得时间';
+comment on column KC29_YS_2.bac339
+  is '医师执业范围';
+comment on column KC29_YS_2.bac340
+  is '康复资质';
+comment on column KC29_YS_2.bac341
+  is '第一执业地点';
+comment on column KC29_YS_2.bac342
+  is '第二执业地点';
+comment on column KC29_YS_2.bac343
+  is '第三执业地点';
+comment on column KC29_YS_2.bac344
+  is '职称';
+comment on column KC29_YS_2.bac345
+  is '职称取得时间';
+comment on column KC29_YS_2.bac346
+  is '康复专业技术资格证书资格级别';
+comment on column KC29_YS_2.bac347
+  is '康复专业技术资格证书专业技术名称';
+comment on column KC29_YS_2.bac348
+  is '康复专业技术资格证书资格授予时间';
+comment on column KC29_YS_2.bac349
+  is '本院服务开始时间';
+comment on column KC29_YS_2.aae005
+  is '联系电话';
+comment on column KC29_YS_2.bac350
+  is '医保服务资格状态';
+comment on column KC29_YS_2.aae003
+  is '备注';
+comment on column KC29_YS_2.hz050
+  is '审核标志';
+comment on column KC29_YS_2.akc292
+  is '审核日期';
+comment on column KC29_YS_2.akc293
+  is '审核反馈';
+comment on column KC29_YS_2.aac020_1
+  is '行政职务_名称';
+comment on column KC29_YS_2.bac344_1
+  is '职称_名称';
+comment on column KC29_YS_2.bac337_1
+  is '执业医师类别_名称';
+comment on column KC29_YS_2.bac339_1
+  is '医师执业范围_名称';
+comment on column KC29_YS_2.bac353
+  is '封锁标记（0未封锁，1封锁）';
+comment on column KC29_YS_2.bac354
+  is '审核结果（1,2分别对应通过和不通过
+）';
+comment on column KC29_YS_2.bac351
+  is '本院服务结束时间';
+comment on column KC29_YS_2.bac352
+  is '第四执业地点';
+comment on column KC29_YS_2.bkc331_1
+  is '执业科别名称';
+comment on column KC29_YS_2.aae011
+  is '医院操作人员';
+comment on column KC29_YS_2.aae036
+  is '医院操作日期';
+comment on column KC29_YS_2.aae012
+  is '审核工号';
+comment on column KC29_YS_2.aae013
+  is '状态（1新增，2变更，3注销）';
+comment on column KC29_YS_2.bac355
+  is '专业技术职务';
+comment on column KC29_YS_2.bac355_1
+  is '专业技术职务_名称';
+comment on column KC29_YS_2.bkf054
+  is '医师执业证书编号';
+comment on column KC29_YS_2.bke049
+  is '医师级别';
+comment on column KC29_YS_2.aac058
+  is '证件类型';
+comment on column KC29_YS_2.bke054
+  is '是否技术交流标志';
+comment on column KC29_YS_2.bkf049
+  is '是否签约医师标志';
+comment on column KC29_YS_2.bkf048
+  is '是否评估医师标志';
+comment on column KC29_YS_2.bkf094
+  is '技术开始交流时间';
+comment on column KC29_YS_2.bkf095
+  is '技术开始交流时间';
+comment on column KC29_YS_2.bkf093
+  is '移动电话';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table KC29_YS_2
+  add constraint PK_AAC001 primary key (AAC001)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+
+-- Create table
+create table KC29_YS_1
+(
+  akc290   INTEGER not null,
+  akb020   VARCHAR2(14) not null,
+  aac001   VARCHAR2(15) not null,
+  aac002   VARCHAR2(25),
+  aac003   VARCHAR2(20),
+  aac004   VARCHAR2(3),
+  bkc331   VARCHAR2(2000),
+  aac020   VARCHAR2(30),
+  bac332   VARCHAR2(30),
+  bac337   VARCHAR2(30),
+  bac338   DATE,
+  bac339   VARCHAR2(100),
+  bac340   VARCHAR2(30),
+  bac341   VARCHAR2(30),
+  bac342   VARCHAR2(30),
+  bac343   VARCHAR2(30),
+  bac344   VARCHAR2(30),
+  bac345   DATE,
+  bac346   VARCHAR2(30),
+  bac347   VARCHAR2(50),
+  bac348   DATE,
+  bac349   DATE,
+  aae005   VARCHAR2(30),
+  bac350   VARCHAR2(30),
+  aae003   VARCHAR2(100),
+  hz050    INTEGER,
+  akc291   DATE default sysdate,
+  akc293   VARCHAR2(100),
+  aac020_1 VARCHAR2(100),
+  bac344_1 VARCHAR2(100),
+  bac337_1 VARCHAR2(100),
+  bac339_1 VARCHAR2(1000),
+  bac351   DATE,
+  bac352   VARCHAR2(30),
+  bkc331_1 VARCHAR2(4000),
+  bac355   VARCHAR2(3),
+  bac355_1 VARCHAR2(100),
+  bkf054   VARCHAR2(50),
+  bke049   VARCHAR2(3),
+  aac058   VARCHAR2(3),
+  bke054   VARCHAR2(20),
+  bkf049   VARCHAR2(3),
+  bkf048   VARCHAR2(3),
+  bkf094   DATE,
+  bkf095   DATE,
+  bkf093   VARCHAR2(50)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table KC29_YS_1
+  is '康复审核信息临时';
+-- Add comments to the columns 
+comment on column KC29_YS_1.akc290
+  is '序号';
+comment on column KC29_YS_1.akb020
+  is '医疗机构编号';
+comment on column KC29_YS_1.aac001
+  is '医护人员编号';
+comment on column KC29_YS_1.aac002
+  is '证件号码';
+comment on column KC29_YS_1.aac003
+  is '姓名';
+comment on column KC29_YS_1.aac004
+  is '性别';
+comment on column KC29_YS_1.bkc331
+  is '执业科别';
+comment on column KC29_YS_1.aac020
+  is '行政职务';
+comment on column KC29_YS_1.bac332
+  is '医师资格证书编号';
+comment on column KC29_YS_1.bac337
+  is '执业医师类别';
+comment on column KC29_YS_1.bac338
+  is '执业资格取得时间';
+comment on column KC29_YS_1.bac339
+  is '医师执业范围';
+comment on column KC29_YS_1.bac340
+  is '康复资质';
+comment on column KC29_YS_1.bac341
+  is '第一执业地点';
+comment on column KC29_YS_1.bac342
+  is '第二执业地点';
+comment on column KC29_YS_1.bac343
+  is '第三执业地点';
+comment on column KC29_YS_1.bac344
+  is '职称';
+comment on column KC29_YS_1.bac345
+  is '职称取得时间';
+comment on column KC29_YS_1.bac346
+  is '康复专业技术资格证书资格级别';
+comment on column KC29_YS_1.bac347
+  is '康复专业技术资格证书专业技术名称';
+comment on column KC29_YS_1.bac348
+  is '康复专业技术资格证书资格授予时间';
+comment on column KC29_YS_1.bac349
+  is '本院服务开始时间';
+comment on column KC29_YS_1.aae005
+  is '移动电话';
+comment on column KC29_YS_1.bac350
+  is '医保服务资格状态';
+comment on column KC29_YS_1.aae003
+  is '备注';
+comment on column KC29_YS_1.hz050
+  is '审核标识';
+comment on column KC29_YS_1.akc291
+  is '录入日期';
+comment on column KC29_YS_1.akc293
+  is '反馈审核结果';
+comment on column KC29_YS_1.aac020_1
+  is '行政职务_名称';
+comment on column KC29_YS_1.bac344_1
+  is '职称_名称';
+comment on column KC29_YS_1.bac337_1
+  is '执业医师类别_名称';
+comment on column KC29_YS_1.bac339_1
+  is '医师执业范围_名称';
+comment on column KC29_YS_1.bac351
+  is '本院服务结束时间';
+comment on column KC29_YS_1.bac352
+  is '第四执业地点';
+comment on column KC29_YS_1.bkc331_1
+  is '执业科别名称';
+comment on column KC29_YS_1.bac355
+  is '专业技术职务';
+comment on column KC29_YS_1.bac355_1
+  is '专业技术职务_名称';
+comment on column KC29_YS_1.bkf054
+  is '医师执业证书编号';
+comment on column KC29_YS_1.bke049
+  is '医师级别';
+comment on column KC29_YS_1.aac058
+  is '证件类型';
+comment on column KC29_YS_1.bke054
+  is '是否技术交流标志';
+comment on column KC29_YS_1.bkf049
+  is '是否签约医师标志';
+comment on column KC29_YS_1.bkf048
+  is '是否评估医师标志';
+comment on column KC29_YS_1.bkf094
+  is '技术交流开始时间';
+comment on column KC29_YS_1.bkf095
+  is '技术交流结束时间';
+comment on column KC29_YS_1.bkf093
+  is '移动电话';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table KC29_YS_1
+  add constraint PK_KC29_YS_1 primary key (AKC290, AKB020, AAC001)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+-- Create table
+create table KC29_YS_BF
+(
+  akc290   INTEGER not null,
+  akb020   VARCHAR2(14) not null,
+  aac001   VARCHAR2(15) not null,
+  aac002   VARCHAR2(25),
+  aac003   VARCHAR2(20),
+  aac004   VARCHAR2(3),
+  bkc331   VARCHAR2(2000),
+  aac020   VARCHAR2(10),
+  bac332   VARCHAR2(30),
+  bac337   VARCHAR2(10),
+  bac338   DATE,
+  bac339   VARCHAR2(100),
+  bac340   VARCHAR2(3),
+  bac341   VARCHAR2(3),
+  bac342   VARCHAR2(3),
+  bac343   VARCHAR2(3),
+  bac344   VARCHAR2(3),
+  bac345   DATE,
+  bac346   VARCHAR2(50),
+  bac347   VARCHAR2(50),
+  bac348   DATE,
+  bac349   DATE,
+  aae005   VARCHAR2(50),
+  bac350   VARCHAR2(50),
+  aae003   VARCHAR2(100),
+  hz050    INTEGER,
+  akc292   DATE,
+  akc293   VARCHAR2(100),
+  aac020_1 VARCHAR2(1000),
+  bac344_1 VARCHAR2(1000),
+  bac337_1 VARCHAR2(100),
+  bac339_1 VARCHAR2(1000),
+  bac353   VARCHAR2(10),
+  bac354   VARCHAR2(3),
+  bac351   DATE,
+  bac352   VARCHAR2(3),
+  bkc331_1 VARCHAR2(4000),
+  aae011   VARCHAR2(20),
+  aae036   DATE,
+  aae012   VARCHAR2(20),
+  aae013   VARCHAR2(3),
+  bac355   VARCHAR2(3),
+  bac355_1 VARCHAR2(100),
+  bkf054   VARCHAR2(50),
+  bke049   VARCHAR2(3),
+  aac058   VARCHAR2(3),
+  bke054   VARCHAR2(20),
+  bkf049   VARCHAR2(3),
+  bkf048   VARCHAR2(3),
+  bkf094   DATE,
+  bkf095   DATE,
+  bkf093   VARCHAR2(50)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+
+-- Create table
+create table KC29_YS_TMP
+(
+  akc290   INTEGER,
+  akb020   VARCHAR2(14) not null,
+  aac001   VARCHAR2(15) not null,
+  aac002   VARCHAR2(25),
+  aac003   VARCHAR2(20),
+  aac004   VARCHAR2(3),
+  bkc331   VARCHAR2(200),
+  aac020   VARCHAR2(30),
+  bac332   VARCHAR2(30),
+  bac337   VARCHAR2(30),
+  bac338   DATE,
+  bac339   VARCHAR2(100),
+  bac340   VARCHAR2(30),
+  bac341   VARCHAR2(30),
+  bac342   VARCHAR2(30),
+  bac343   VARCHAR2(30),
+  bac344   VARCHAR2(30),
+  bac345   DATE,
+  bac346   VARCHAR2(30),
+  bac347   VARCHAR2(50),
+  bac348   VARCHAR2(20),
+  bac349   VARCHAR2(20),
+  aae005   VARCHAR2(30),
+  bac350   VARCHAR2(30),
+  aae003   VARCHAR2(100),
+  hz050    INTEGER,
+  akc291   VARCHAR2(30),
+  akc293   VARCHAR2(100),
+  aac020_1 VARCHAR2(100),
+  bac344_1 VARCHAR2(100),
+  bac337_1 VARCHAR2(100),
+  bac339_1 VARCHAR2(1000),
+  bac351   VARCHAR2(20),
+  bac352   VARCHAR2(30),
+  bkc331_1 VARCHAR2(4000),
+  bac355   VARCHAR2(3),
+  bac355_1 VARCHAR2(100),
+  bkf054   VARCHAR2(50),
+  bke049   VARCHAR2(3),
+  aac058   VARCHAR2(3),
+  bke054   VARCHAR2(20),
+  bkf049   VARCHAR2(3),
+  bkf048   VARCHAR2(3),
+  bkf094   DATE,
+  bkf095   DATE,
+  bkf093   VARCHAR2(50)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+
+
+-- Create table
+create table KC29_YSZC
+(
+  akc290   INTEGER not null,
+  akb020   VARCHAR2(14) not null,
+  aac001   VARCHAR2(15) not null,
+  aac002   VARCHAR2(25),
+  aac003   VARCHAR2(20),
+  aac004   VARCHAR2(3),
+  bkc331   VARCHAR2(1000),
+  aac020   VARCHAR2(30),
+  bac332   VARCHAR2(30) not null,
+  bac337   VARCHAR2(30),
+  bac338   DATE,
+  bac339   VARCHAR2(100),
+  bac340   VARCHAR2(30),
+  bac341   VARCHAR2(30),
+  bac342   VARCHAR2(30),
+  bac343   VARCHAR2(30),
+  bac344   VARCHAR2(30),
+  bac345   DATE,
+  bac349   DATE,
+  aae005   VARCHAR2(30),
+  bac350   VARCHAR2(30),
+  aae003   VARCHAR2(100),
+  hz050    INTEGER,
+  akc291   DATE,
+  akc293   VARCHAR2(100),
+  aac020_1 VARCHAR2(100),
+  bac344_1 VARCHAR2(100),
+  bac337_1 VARCHAR2(100),
+  bac351   DATE,
+  bac352   VARCHAR2(30),
+  bkc331_1 VARCHAR2(4000),
+  bac355   VARCHAR2(3),
+  bac355_1 VARCHAR2(100),
+  bkf054   VARCHAR2(50),
+  bke049   VARCHAR2(3),
+  aac058   VARCHAR2(3),
+  bke054   VARCHAR2(20),
+  bkf049   VARCHAR2(3),
+  bkf048   VARCHAR2(3),
+  bkf095   DATE,
+  bkf093   VARCHAR2(50),
+  baz001   NUMBER(16),
+  baz002   NUMBER(16),
+  bze011   VARCHAR2(50),
+  bze036   DATE,
+  bze034   VARCHAR2(16),
+  aae011   VARCHAR2(50),
+  aae036   DATE,
+  bkf096   VARCHAR2(3),
+  aaa027   VARCHAR2(6),
+  bkf094   DATE,
+  bac339_1 VARCHAR2(1000)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table KC29_YSZC
+  is '医师信息暂存表';
+-- Add comments to the columns 
+comment on column KC29_YSZC.akc290
+  is '序号';
+comment on column KC29_YSZC.akb020
+  is '医疗机构编号';
+comment on column KC29_YSZC.aac001
+  is '医护人员编号';
+comment on column KC29_YSZC.aac002
+  is '证件号码';
+comment on column KC29_YSZC.aac003
+  is '姓名';
+comment on column KC29_YSZC.aac004
+  is '性别';
+comment on column KC29_YSZC.bkc331
+  is '执业科别';
+comment on column KC29_YSZC.aac020
+  is '行政职务';
+comment on column KC29_YSZC.bac332
+  is '医师资格证书编号';
+comment on column KC29_YSZC.bac337
+  is '执业医师类别';
+comment on column KC29_YSZC.bac338
+  is '执业资格取得时间';
+comment on column KC29_YSZC.bac339
+  is '医师执业范围';
+comment on column KC29_YSZC.bac340
+  is '康复资质';
+comment on column KC29_YSZC.bac341
+  is '第一执业地点';
+comment on column KC29_YSZC.bac342
+  is '第二执业地点';
+comment on column KC29_YSZC.bac343
+  is '第三执业地点';
+comment on column KC29_YSZC.bac344
+  is '职称';
+comment on column KC29_YSZC.bac345
+  is '职称取得时间';
+comment on column KC29_YSZC.bac349
+  is '本院服务开始时间';
+comment on column KC29_YSZC.aae005
+  is '移动电话';
+comment on column KC29_YSZC.bac350
+  is '医保服务资格状态';
+comment on column KC29_YSZC.aae003
+  is '备注';
+comment on column KC29_YSZC.hz050
+  is '审核标识';
+comment on column KC29_YSZC.akc291
+  is '录入日期';
+comment on column KC29_YSZC.akc293
+  is '反馈审核结果';
+comment on column KC29_YSZC.aac020_1
+  is '行政职务_名称';
+comment on column KC29_YSZC.bac344_1
+  is '职称_名称';
+comment on column KC29_YSZC.bac337_1
+  is '执业医师类别_名称';
+comment on column KC29_YSZC.bac351
+  is '本院服务结束时间';
+comment on column KC29_YSZC.bac352
+  is '第四执业地点';
+comment on column KC29_YSZC.bkc331_1
+  is '执业科别名称';
+comment on column KC29_YSZC.bac355
+  is '专业技术职务';
+comment on column KC29_YSZC.bac355_1
+  is '专业技术职务_名称';
+comment on column KC29_YSZC.bkf054
+  is '医师执业证书编号';
+comment on column KC29_YSZC.bke049
+  is '医师级别';
+comment on column KC29_YSZC.aac058
+  is '证件类型';
+comment on column KC29_YSZC.bke054
+  is '是否技术交流标志';
+comment on column KC29_YSZC.bkf049
+  is '是否签约医师标志';
+comment on column KC29_YSZC.bkf048
+  is '是否评估医师标志';
+comment on column KC29_YSZC.bkf095
+  is '技术交流结束时间';
+comment on column KC29_YSZC.bkf093
+  is '移动电话';
+comment on column KC29_YSZC.baz001
+  is '记录编号';
+comment on column KC29_YSZC.baz002
+  is '操作序号';
+comment on column KC29_YSZC.bze011
+  is '创建人';
+comment on column KC29_YSZC.bze036
+  is '创建时间';
+comment on column KC29_YSZC.bze034
+  is '创建机构编码';
+comment on column KC29_YSZC.aae011
+  is '经办人';
+comment on column KC29_YSZC.aae036
+  is '经办时间';
+comment on column KC29_YSZC.bkf096
+  is '自由执业标志';
+comment on column KC29_YSZC.aaa027
+  is '统筹区编码';
+comment on column KC29_YSZC.bkf094
+  is '技术交流开始时间';
+comment on column KC29_YSZC.bac339_1
+  is '医师执业范围_名称';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table KC29_YSZC
+  add constraint PK_KC29_YSZC primary key (AAC001, AKB020, BAC332)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+
+-- Create table
+create table KC29_YSSH
+(
+  akc290   INTEGER not null,
+  akb020   VARCHAR2(14) not null,
+  aac001   VARCHAR2(15) not null,
+  aac002   VARCHAR2(25),
+  aac003   VARCHAR2(20),
+  aac004   VARCHAR2(3),
+  bkc331   VARCHAR2(1000),
+  aac020   VARCHAR2(10),
+  bac332   VARCHAR2(30),
+  bac337   VARCHAR2(10),
+  bac338   DATE,
+  bac339   VARCHAR2(100),
+  bac340   VARCHAR2(3),
+  bac341   VARCHAR2(3),
+  bac342   VARCHAR2(3),
+  bac343   VARCHAR2(3),
+  bac344   VARCHAR2(3),
+  bac345   DATE,
+  bac349   DATE,
+  aae005   VARCHAR2(50),
+  bac350   VARCHAR2(50),
+  aae003   VARCHAR2(100),
+  hz050    INTEGER,
+  akc292   DATE,
+  akc293   VARCHAR2(100),
+  aac020_1 VARCHAR2(1000),
+  bac344_1 VARCHAR2(1000),
+  bac337_1 VARCHAR2(100),
+  bac339_1 VARCHAR2(1000),
+  bac353   VARCHAR2(10),
+  bac354   VARCHAR2(3),
+  bac351   DATE,
+  bac352   VARCHAR2(3),
+  bkc331_1 VARCHAR2(4000),
+  aae011   VARCHAR2(50),
+  aae036   DATE,
+  aae012   VARCHAR2(20),
+  aae013   VARCHAR2(3),
+  bac355   VARCHAR2(3),
+  bac355_1 VARCHAR2(100),
+  bkf054   VARCHAR2(50),
+  bke049   VARCHAR2(3),
+  aac058   VARCHAR2(3),
+  bke054   VARCHAR2(20),
+  bkf049   VARCHAR2(3),
+  bkf048   VARCHAR2(3),
+  bkf094   DATE,
+  bkf095   DATE,
+  bkf093   VARCHAR2(50),
+  bkf096   VARCHAR2(3),
+  bze011   VARCHAR2(50),
+  bze036   DATE,
+  aaa027   VARCHAR2(6)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table KC29_YSSH
+  is '医师审核信息';
+-- Add comments to the columns 
+comment on column KC29_YSSH.akc290
+  is '序号';
+comment on column KC29_YSSH.akb020
+  is '医疗机构编号';
+comment on column KC29_YSSH.aac001
+  is '医护人员编号';
+comment on column KC29_YSSH.aac002
+  is '证件号码';
+comment on column KC29_YSSH.aac003
+  is '姓名';
+comment on column KC29_YSSH.aac004
+  is '性别';
+comment on column KC29_YSSH.bkc331
+  is '执业科别';
+comment on column KC29_YSSH.aac020
+  is '行政职务';
+comment on column KC29_YSSH.bac332
+  is '医师资格证书编号';
+comment on column KC29_YSSH.bac337
+  is '执业医师类别';
+comment on column KC29_YSSH.bac338
+  is '执业资格取得时间';
+comment on column KC29_YSSH.bac339
+  is '医师执业范围';
+comment on column KC29_YSSH.bac340
+  is '康复资质';
+comment on column KC29_YSSH.bac341
+  is '自由执业标志';
+comment on column KC29_YSSH.bac342
+  is '第二执业地点';
+comment on column KC29_YSSH.bac343
+  is '第三执业地点';
+comment on column KC29_YSSH.bac344
+  is '职称';
+comment on column KC29_YSSH.bac345
+  is '职称取得时间';
+comment on column KC29_YSSH.bac349
+  is '本院服务开始时间';
+comment on column KC29_YSSH.aae005
+  is '联系电话';
+comment on column KC29_YSSH.bac350
+  is '医保服务资格状态';
+comment on column KC29_YSSH.aae003
+  is '备注';
+comment on column KC29_YSSH.hz050
+  is '审核标志';
+comment on column KC29_YSSH.akc292
+  is '审核日期';
+comment on column KC29_YSSH.akc293
+  is '审核反馈';
+comment on column KC29_YSSH.aac020_1
+  is '行政职务_名称';
+comment on column KC29_YSSH.bac344_1
+  is '职称_名称';
+comment on column KC29_YSSH.bac337_1
+  is '执业医师类别_名称';
+comment on column KC29_YSSH.bac339_1
+  is '医师执业范围_名称';
+comment on column KC29_YSSH.bac353
+  is '封锁标记（0未封锁，1封锁）';
+comment on column KC29_YSSH.bac354
+  is '审核结果（1,2分别对应通过和不通过
+）';
+comment on column KC29_YSSH.bac351
+  is '本院服务结束时间';
+comment on column KC29_YSSH.bac352
+  is '第四执业地点';
+comment on column KC29_YSSH.bkc331_1
+  is '执业科别名称';
+comment on column KC29_YSSH.aae011
+  is '经办人';
+comment on column KC29_YSSH.aae036
+  is '经办时间';
+comment on column KC29_YSSH.aae012
+  is '审核工号';
+comment on column KC29_YSSH.aae013
+  is '状态（1新增，2变更，3注销）';
+comment on column KC29_YSSH.bac355
+  is '专业技术职务';
+comment on column KC29_YSSH.bac355_1
+  is '专业技术职务_名称';
+comment on column KC29_YSSH.bkf054
+  is '医师执业证书编号';
+comment on column KC29_YSSH.bke049
+  is '医师级别';
+comment on column KC29_YSSH.aac058
+  is '证件类型';
+comment on column KC29_YSSH.bke054
+  is '是否技术交流标志';
+comment on column KC29_YSSH.bkf049
+  is '是否签约医师标志';
+comment on column KC29_YSSH.bkf048
+  is '是否评估医师标志';
+comment on column KC29_YSSH.bkf094
+  is '技术开始交流时间';
+comment on column KC29_YSSH.bkf095
+  is '技术开始交流时间';
+comment on column KC29_YSSH.bkf093
+  is '移动电话';
+comment on column KC29_YSSH.bkf096
+  is '自由执业标志';
+comment on column KC29_YSSH.bze011
+  is '创建人';
+comment on column KC29_YSSH.bze036
+  is '创建时间';
+comment on column KC29_YSSH.aaa027
+  is '统筹区编码';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table KC29_YSSH
+  add constraint PK_KC29_YSSH primary key (AKB020, AAC001)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+-- Create table
+create table KC28
+(
+  akc290   INTEGER not null,
+  akb020   VARCHAR2(14) not null,
+  aac001   VARCHAR2(15) not null,
+  aac002   VARCHAR2(25),
+  aac003   VARCHAR2(20),
+  aac004   VARCHAR2(3),
+  bkc331   VARCHAR2(200),
+  aac020   VARCHAR2(10),
+  bac332   VARCHAR2(30),
+  bac337   VARCHAR2(10),
+  bac338   DATE,
+  bac339   VARCHAR2(100),
+  bac340   VARCHAR2(3),
+  bac341   VARCHAR2(3),
+  bac342   VARCHAR2(3),
+  bac343   VARCHAR2(3),
+  bac344   VARCHAR2(3),
+  bac345   DATE,
+  bac349   DATE,
+  aae005   VARCHAR2(50),
+  bac350   VARCHAR2(50),
+  aae003   VARCHAR2(100),
+  hz050    INTEGER,
+  akc292   DATE,
+  akc293   VARCHAR2(100),
+  aac020_1 VARCHAR2(1000),
+  bac344_1 VARCHAR2(1000),
+  bac337_1 VARCHAR2(100),
+  bac339_1 VARCHAR2(1000),
+  bac353   VARCHAR2(10),
+  bac354   VARCHAR2(3),
+  bac351   DATE,
+  bac352   VARCHAR2(3),
+  bkc331_1 VARCHAR2(4000),
+  aae011   VARCHAR2(50),
+  aae036   DATE,
+  aae012   VARCHAR2(20),
+  aae013   VARCHAR2(3),
+  bac355   VARCHAR2(3),
+  bac355_1 VARCHAR2(100),
+  bkf054   VARCHAR2(50),
+  bke049   VARCHAR2(3),
+  aac058   VARCHAR2(3),
+  bke054   VARCHAR2(20),
+  bkf049   VARCHAR2(3),
+  bkf048   VARCHAR2(3),
+  bkf094   DATE,
+  bkf095   DATE,
+  bkf093   VARCHAR2(50),
+  bkf096   VARCHAR2(3),
+  bze011   VARCHAR2(50),
+  bze036   DATE,
+  aaa027   VARCHAR2(6)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the columns 
+comment on column KC28.akc290
+  is '序号';
+comment on column KC28.akb020
+  is '医疗机构编号';
+comment on column KC28.aac001
+  is '医护人员编号';
+comment on column KC28.aac002
+  is '证件号码';
+comment on column KC28.aac003
+  is '姓名';
+comment on column KC28.aac004
+  is '性别';
+comment on column KC28.bkc331
+  is '执业科别';
+comment on column KC28.aac020
+  is '行政职务';
+comment on column KC28.bac332
+  is '医师资格证书编号';
+comment on column KC28.bac337
+  is '执业医师类别';
+comment on column KC28.bac338
+  is '执业资格取得时间';
+comment on column KC28.bac339
+  is '医师执业范围';
+comment on column KC28.bac340
+  is '康复资质';
+comment on column KC28.bac341
+  is '第一执业地点';
+comment on column KC28.bac342
+  is '第二执业地点';
+comment on column KC28.bac343
+  is '第三执业地点';
+comment on column KC28.bac344
+  is '职称';
+comment on column KC28.bac345
+  is '职称取得时间';
+comment on column KC28.bac349
+  is '本院服务开始时间';
+comment on column KC28.aae005
+  is '联系电话';
+comment on column KC28.bac350
+  is '医保服务资格状态';
+comment on column KC28.aae003
+  is '备注';
+comment on column KC28.hz050
+  is '审核标志';
+comment on column KC28.akc292
+  is '审核日期';
+comment on column KC28.akc293
+  is '审核反馈';
+comment on column KC28.aac020_1
+  is '行政职务_名称';
+comment on column KC28.bac344_1
+  is '职称_名称';
+comment on column KC28.bac337_1
+  is '执业医师类别_名称';
+comment on column KC28.bac339_1
+  is '医师执业范围_名称';
+comment on column KC28.bac353
+  is '封锁标记（0未封锁，1封锁）';
+comment on column KC28.bac354
+  is '审核结果（1,2分别对应通过和不通过
+）';
+comment on column KC28.bac351
+  is '本院服务结束时间';
+comment on column KC28.bac352
+  is '第四执业地点';
+comment on column KC28.bkc331_1
+  is '执业科别名称';
+comment on column KC28.aae011
+  is '经办人';
+comment on column KC28.aae036
+  is '经办时间';
+comment on column KC28.aae012
+  is '审核工号';
+comment on column KC28.aae013
+  is '状态（1新增，2变更，3注销）';
+comment on column KC28.bac355
+  is '专业技术职务';
+comment on column KC28.bac355_1
+  is '专业技术职务_名称';
+comment on column KC28.bkf054
+  is '医师执业证书编号';
+comment on column KC28.bke049
+  is '医师级别';
+comment on column KC28.aac058
+  is '证件类型';
+comment on column KC28.bke054
+  is '是否技术交流标志';
+comment on column KC28.bkf049
+  is '是否签约医师标志';
+comment on column KC28.bkf048
+  is '是否评估医师标志';
+comment on column KC28.bkf094
+  is '技术开始交流时间';
+comment on column KC28.bkf095
+  is '技术开始交流时间';
+comment on column KC28.bkf093
+  is '移动电话';
+comment on column KC28.bkf096
+  is '自由执业标志';
+comment on column KC28.bze011
+  is '创建人';
+comment on column KC28.bze036
+  is '创建时间';
+comment on column KC28.aaa027
+  is '统筹区编码';
+
+
+-- Create table
+create table KM01
+(
+  baz001   NUMBER(16) not null,
+  baz002   NUMBER(16),
+  bae622   NUMBER(16),
+  akb020   VARCHAR2(20),
+  akb021   VARCHAR2(100),
+  bae004   VARCHAR2(50),
+  bae260   VARCHAR2(12),
+  bae261   VARCHAR2(500),
+  aae013   VARCHAR2(100),
+  aae011   VARCHAR2(100),
+  aae036   DATE,
+  akc803   VARCHAR2(10),
+  akb022   VARCHAR2(3),
+  aka101   VARCHAR2(3),
+  bka994   VARCHAR2(3),
+  bka995   VARCHAR2(3),
+  akb023   VARCHAR2(3),
+  bka938   VARCHAR2(3),
+  aae004   VARCHAR2(50),
+  aae005   VARCHAR2(50),
+  aae005_1 NUMBER,
+  bae005_1 NUMBER,
+  bae005   VARCHAR2(50)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table KM01
+  is '短信信息本地表导入表';
+-- Add comments to the columns 
+comment on column KM01.baz001
+  is '记录编号';
+comment on column KM01.baz002
+  is '操作序号';
+comment on column KM01.bae622
+  is '报盘流水号';
+comment on column KM01.akb020
+  is '医疗服务机构编号';
+comment on column KM01.akb021
+  is '医疗服务机构名称';
+comment on column KM01.bae004
+  is '信息联系人';
+comment on column KM01.bae260
+  is '手机号码';
+comment on column KM01.bae261
+  is '短信内容';
+comment on column KM01.aae013
+  is '备注';
+comment on column KM01.aae011
+  is '经办人';
+comment on column KM01.aae036
+  is '经办时间';
+comment on column KM01.akc803
+  is '所属统筹区';
+comment on column KM01.akb022
+  is '类型(1.医院、2.药店)';
+comment on column KM01.aka101
+  is '医疗等级';
+comment on column KM01.bka994
+  is '省一卡通标志';
+comment on column KM01.bka995
+  is '市一卡通标志';
+comment on column KM01.akb023
+  is '定点医疗机构状态';
+comment on column KM01.bka938
+  is '赢利类型';
+comment on column KM01.aae004
+  is '医保联系人';
+comment on column KM01.aae005
+  is '医保联系联系电话';
+comment on column KM01.aae005_1
+  is '医保联系手机号码';
+comment on column KM01.bae005_1
+  is '信息联系人手机';
+comment on column KM01.bae005
+  is '信息联系人电话';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table KM01
+  add constraint PK_KM01 primary key (BAZ001)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+
+-- Create table
+create table KB01_YS_2
+(
+  akb010   INTEGER not null,
+  akb020   VARCHAR2(20) not null,
+  akb021   VARCHAR2(100),
+  akb022   VARCHAR2(3),
+  akb023   VARCHAR2(3),
+  aae415   VARCHAR2(3),
+  aab003   VARCHAR2(15),
+  akb026   VARCHAR2(100),
+  aab020   VARCHAR2(3),
+  aae416   VARCHAR2(3),
+  aka101   VARCHAR2(3),
+  aae417   VARCHAR2(10),
+  aae418   VARCHAR2(3),
+  akb020_1 VARCHAR2(20),
+  akb021_1 VARCHAR2(50),
+  aae419   VARCHAR2(3),
+  akb029   VARCHAR2(1000),
+  akb028   VARCHAR2(1000),
+  aae008   VARCHAR2(100),
+  aae010   VARCHAR2(50),
+  aae009   VARCHAR2(200),
+  akb223   VARCHAR2(50),
+  akb027   VARCHAR2(50),
+  aac193   VARCHAR2(3),
+  aae420   VARCHAR2(3),
+  aae421   VARCHAR2(3),
+  aae422   VARCHAR2(3),
+  aae423   VARCHAR2(3),
+  aae424   VARCHAR2(3),
+  akc803   VARCHAR2(10),
+  akb025   VARCHAR2(50),
+  aab013   VARCHAR2(50),
+  aab062   VARCHAR2(50),
+  aae004   VARCHAR2(50),
+  aae005   VARCHAR2(50),
+  ckb306   VARCHAR2(50),
+  aae006   VARCHAR2(100),
+  aae007   VARCHAR2(14),
+  ckb307   VARCHAR2(20),
+  aae425   VARCHAR2(50),
+  aae426   VARCHAR2(20),
+  aae427   VARCHAR2(20),
+  aae428   DATE,
+  aae100   VARCHAR2(3),
+  aae013   VARCHAR2(200),
+  aae429   VARCHAR2(50),
+  hz050    INTEGER,
+  akb011   DATE,
+  akb012   VARCHAR2(100),
+  hz021    VARCHAR2(4000),
+  hz031    VARCHAR2(4000),
+  aae011   VARCHAR2(20),
+  aae036   DATE,
+  akc292   DATE default sysdate,
+  aae012   VARCHAR2(50),
+  akc293   VARCHAR2(100),
+  bac354   VARCHAR2(3),
+  bkb801   VARCHAR2(10),
+  hz04g_1  VARCHAR2(20),
+  bkb800   VARCHAR2(20)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table KB01_YS_2
+  is '医院信息';
+-- Add comments to the columns 
+comment on column KB01_YS_2.akb010
+  is '序号';
+comment on column KB01_YS_2.akb020
+  is '医疗服务机构编号';
+comment on column KB01_YS_2.akb021
+  is '医疗服务机构名称';
+comment on column KB01_YS_2.akb022
+  is '医疗服务机构类型';
+comment on column KB01_YS_2.akb023
+  is '医疗机构分类';
+comment on column KB01_YS_2.aae415
+  is '所有制形式';
+comment on column KB01_YS_2.aab003
+  is '组织机构代码';
+comment on column KB01_YS_2.akb026
+  is '执业许可证登记号';
+comment on column KB01_YS_2.aab020
+  is '医疗机构经济类型';
+comment on column KB01_YS_2.aae416
+  is '医疗机构分类管理代码';
+comment on column KB01_YS_2.aka101
+  is '医院等级';
+comment on column KB01_YS_2.aae417
+  is '医保评级';
+comment on column KB01_YS_2.aae418
+  is '分院标志';
+comment on column KB01_YS_2.akb020_1
+  is '上级医疗机构编码';
+comment on column KB01_YS_2.akb021_1
+  is '医院其他名称';
+comment on column KB01_YS_2.aae419
+  is '联网结算标志';
+comment on column KB01_YS_2.akb029
+  is '执业范围';
+comment on column KB01_YS_2.akb028
+  is '医疗技术范围';
+comment on column KB01_YS_2.aae008
+  is '开户行';
+comment on column KB01_YS_2.aae010
+  is '银行账号';
+comment on column KB01_YS_2.aae009
+  is '户名';
+comment on column KB01_YS_2.akb223
+  is '支付联行号';
+comment on column KB01_YS_2.akb027
+  is '营业许可证号';
+comment on column KB01_YS_2.aac193
+  is '所属城区';
+comment on column KB01_YS_2.aae420
+  is '市内医院标志';
+comment on column KB01_YS_2.aae421
+  is '对内服务标志';
+comment on column KB01_YS_2.aae422
+  is '体检医院标志';
+comment on column KB01_YS_2.aae423
+  is '市一卡通标志';
+comment on column KB01_YS_2.aae424
+  is '省一卡通标志';
+comment on column KB01_YS_2.akc803
+  is '所属统筹区';
+comment on column KB01_YS_2.akb025
+  is '管理部门';
+comment on column KB01_YS_2.aab013
+  is '法人';
+comment on column KB01_YS_2.aab062
+  is '分管医保负责人';
+comment on column KB01_YS_2.aae004
+  is '医保联系人';
+comment on column KB01_YS_2.aae005
+  is '联系电话';
+comment on column KB01_YS_2.ckb306
+  is '手机号码';
+comment on column KB01_YS_2.aae006
+  is '联系地址';
+comment on column KB01_YS_2.aae007
+  is '邮政编码';
+comment on column KB01_YS_2.ckb307
+  is '传真号码';
+comment on column KB01_YS_2.aae425
+  is '开发商';
+comment on column KB01_YS_2.aae426
+  is '开发商负责人';
+comment on column KB01_YS_2.aae427
+  is '开发商联系电话';
+comment on column KB01_YS_2.aae428
+  is '首次批准定点日期';
+comment on column KB01_YS_2.aae100
+  is '有效标志';
+comment on column KB01_YS_2.aae013
+  is '备注';
+comment on column KB01_YS_2.aae429
+  is '邮箱';
+comment on column KB01_YS_2.hz050
+  is '审核标志';
+comment on column KB01_YS_2.akb011
+  is '提交审核日期';
+comment on column KB01_YS_2.akb012
+  is '审核失败原因';
+comment on column KB01_YS_2.bkb801
+  is '核对床位数';
+comment on column KB01_YS_2.hz04g_1
+  is '类别名称';
+comment on column KB01_YS_2.bkb800
+  is '省统一编码 ';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table KB01_YS_2
+  add constraint PK_KB01_YS_2_AKB020_ID primary key (AKB020)
+  disable;
+
+
+
+-- Create table
+create table HOS_HZ02
+(
+  hz020  VARCHAR2(10) not null,
+  hz021  VARCHAR2(50) not null,
+  hz022  INTEGER,
+  hos_id VARCHAR2(20) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table HOS_HZ02
+  is '执业范围代码表';
+-- Add comments to the columns 
+comment on column HOS_HZ02.hz020
+  is '编号';
+comment on column HOS_HZ02.hz021
+  is '名称';
+comment on column HOS_HZ02.hz022
+  is 'Id';
+comment on column HOS_HZ02.hos_id
+  is '医疗服务机构编号';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table HOS_HZ02
+  add constraint PK_HOS_HZ02_HZ020 primary key (HOS_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+
+-- Create table
+create table HOS_HZ03
+(
+  hz030  INTEGER not null,
+  hz031  VARCHAR2(100) not null,
+  hz032  VARCHAR2(100),
+  hos_id VARCHAR2(20) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table HOS_HZ03
+  is '医疗技术范围代码表';
+-- Add comments to the columns 
+comment on column HOS_HZ03.hz030
+  is '编号';
+comment on column HOS_HZ03.hz031
+  is '名称';
+comment on column HOS_HZ03.hz032
+  is '备注';
+comment on column HOS_HZ03.hos_id
+  is '医疗服务机构编号';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table HOS_HZ03
+  add constraint PK_HOS_HZ03_HZ030 primary key (HOS_ID, HZ031, HZ030)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+
+-- Create table
+create table HOS_HZ04_TEMP
+(
+  hz040   INTEGER not null,
+  hos_id  VARCHAR2(20) not null,
+  hz041   VARCHAR2(300),
+  hz000   VARCHAR2(3),
+  hz010   VARCHAR2(3),
+  hz042   VARCHAR2(50),
+  hz020   VARCHAR2(1000),
+  hz030   VARCHAR2(1000),
+  hz043   VARCHAR2(60),
+  hz044   VARCHAR2(200),
+  hz045   VARCHAR2(60),
+  hz046   VARCHAR2(50),
+  hz047   VARCHAR2(50),
+  hz048   VARCHAR2(50),
+  hz049   VARCHAR2(200),
+  hz04a   VARCHAR2(50),
+  hz04b   VARCHAR2(50),
+  hz04c   DATE default sysdate,
+  hz04d   VARCHAR2(300),
+  hz050   VARCHAR2(3),
+  hz04e   VARCHAR2(300),
+  hz021   VARCHAR2(4000),
+  hz031   VARCHAR2(4000),
+  hz04f   VARCHAR2(20),
+  hz04g   VARCHAR2(5),
+  hz04h   VARCHAR2(20),
+  hz04g_1 VARCHAR2(20)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table HOS_HZ04_TEMP
+  is '医院库临时表';
+-- Add comments to the columns 
+comment on column HOS_HZ04_TEMP.hz040
+  is '编号';
+comment on column HOS_HZ04_TEMP.hos_id
+  is '医疗服务机构编号';
+comment on column HOS_HZ04_TEMP.hz041
+  is '医疗服务机构名称';
+comment on column HOS_HZ04_TEMP.hz000
+  is '经济类型';
+comment on column HOS_HZ04_TEMP.hz010
+  is '医疗机构分类';
+comment on column HOS_HZ04_TEMP.hz042
+  is '服务机构执业许可证登记号';
+comment on column HOS_HZ04_TEMP.hz020
+  is '执业范围编号';
+comment on column HOS_HZ04_TEMP.hz030
+  is '医疗技术范围编号';
+comment on column HOS_HZ04_TEMP.hz043
+  is '银行行号';
+comment on column HOS_HZ04_TEMP.hz044
+  is '户名';
+comment on column HOS_HZ04_TEMP.hz045
+  is '银行账号';
+comment on column HOS_HZ04_TEMP.hz046
+  is '医保联系人';
+comment on column HOS_HZ04_TEMP.hz047
+  is '联系电话';
+comment on column HOS_HZ04_TEMP.hz048
+  is '邮箱';
+comment on column HOS_HZ04_TEMP.hz049
+  is '开发商';
+comment on column HOS_HZ04_TEMP.hz04a
+  is '开发商联系人';
+comment on column HOS_HZ04_TEMP.hz04b
+  is '开发商联系电话';
+comment on column HOS_HZ04_TEMP.hz04c
+  is '备注';
+comment on column HOS_HZ04_TEMP.hz04d
+  is '录入日期';
+comment on column HOS_HZ04_TEMP.hz050
+  is '审核状态';
+comment on column HOS_HZ04_TEMP.hz04e
+  is '回退原因';
+comment on column HOS_HZ04_TEMP.hz021
+  is '执业范围名称';
+comment on column HOS_HZ04_TEMP.hz031
+  is '医疗技术范围名称';
+comment on column HOS_HZ04_TEMP.hz04f
+  is '核定床位数';
+comment on column HOS_HZ04_TEMP.hz04g
+  is '类别';
+comment on column HOS_HZ04_TEMP.hz04h
+  is '所在经办机构编码';
+comment on column HOS_HZ04_TEMP.hz04g_1
+  is '类别名称';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table HOS_HZ04_TEMP
+  add constraint PK_HOS_HZ04_TEMP primary key (HOS_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+
+-- Create table
+create table KC30
+(
+  akb020 VARCHAR2(20) not null,
+  bac332 VARCHAR2(30) not null,
+  aac001 VARCHAR2(30),
+  akz004 VARCHAR2(200) not null,
+  baz001 NUMBER(16),
+  baz002 NUMBER(16),
+  aae011 VARCHAR2(50),
+  aae036 DATE,
+  akz002 BLOB,
+  bze011 VARCHAR2(50),
+  bze036 DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table KC30
+  is '医师提交材料信息';
+-- Add comments to the columns 
+comment on column KC30.akb020
+  is '医疗机构编号';
+comment on column KC30.bac332
+  is '医师资格证书编号';
+comment on column KC30.aac001
+  is '工号';
+comment on column KC30.akz004
+  is '材料类型';
+comment on column KC30.baz001
+  is '记录编号';
+comment on column KC30.baz002
+  is '操作序号';
+comment on column KC30.aae011
+  is '经办人';
+comment on column KC30.aae036
+  is '经办时间';
+comment on column KC30.akz002
+  is '材料';
+comment on column KC30.bze011
+  is '创建人';
+comment on column KC30.bze036
+  is '创建时间';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table KC30
+  add constraint PK_KC30 primary key (AKB020, BAC332, AKZ004)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+
+-- Create table
+create table KM01_IMP
+(
+  baz001   NUMBER(16),
+  baz002   NUMBER(16),
+  bae622   NUMBER(16),
+  akb020   VARCHAR2(20),
+  akb021   VARCHAR2(100),
+  bae004   VARCHAR2(50),
+  bae260   VARCHAR2(12),
+  bae261   VARCHAR2(500),
+  aae013   VARCHAR2(100),
+  aae011   VARCHAR2(100),
+  aae036   DATE,
+  akc803   VARCHAR2(10),
+  akb022   VARCHAR2(3),
+  aka101   VARCHAR2(3),
+  bka994   VARCHAR2(3),
+  bka995   VARCHAR2(3),
+  akb023   VARCHAR2(3),
+  bka938   VARCHAR2(3),
+  aae004   VARCHAR2(50),
+  aae005   VARCHAR2(50),
+  aae005_1 NUMBER,
+  bae005_1 NUMBER,
+  bae005   VARCHAR2(50)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+
+
+create or replace view v_kc29fsxx as
+select a.rowid as rid,
+       a.akb020,
+       a.aac003,
+       a.aac004,
+       a.aac002,
+       a.Bkc331_1 as "BKC331",
+       a.aac020_1 as "AAC020",
+       a.bac344_1 as "BAC344",
+       a.BAC345,
+       a.bac337_1 as "BAC337",
+       a.BAC332,
+       a.BAC338,
+       a.bac339_1 as "BAC339",
+       a.BAC340,
+       a.BAC341,
+       a.BAC342,
+       a.BAC343,
+       a.aac001,
+       a.BAC349,
+       a.AAE005,
+       a.AAE003,
+       a.BAC351,
+       b.AAE030,
+       b.AAE031,
+       b.BKF750 as "BAC355",
+       b.AAE013
+  from kc29_ys_2 a, kf11 b
+ where a.akb020 = b.akb020
+       and a.aac001 = b.bkf050
+       and b.bkb318 = '1';
+
+
+-- Create table
+create table AC01_YS_TMP
+(
+  baz001 NUMBER(16),
+  baz002 NUMBER(16),
+  aac001 NUMBER(30),
+  aac999 VARCHAR2(30),
+  aac002 VARCHAR2(22),
+  aac003 VARCHAR2(50),
+  aac004 VARCHAR2(30),
+  aac005 VARCHAR2(3),
+  aac006 DATE,
+  aac058 VARCHAR2(30),
+  aac147 VARCHAR2(22),
+  bac337 VARCHAR2(30),
+  bac338 VARCHAR2(50),
+  bac339 VARCHAR2(100),
+  bac344 VARCHAR2(30),
+  bac345 VARCHAR2(50),
+  bac349 DATE,
+  bac351 VARCHAR2(3),
+  bac352 VARCHAR2(100),
+  bac353 DATE,
+  bze011 VARCHAR2(50),
+  bze036 DATE,
+  bze034 VARCHAR2(16),
+  aae011 VARCHAR2(50),
+  aae036 DATE,
+  aab034 VARCHAR2(16),
+  aaa027 VARCHAR2(6),
+  bac332 VARCHAR2(30),
+  bac341 VARCHAR2(30),
+  bke049 VARCHAR2(30),
+  bac342 VARCHAR2(100),
+  bkf054 VARCHAR2(50)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+
+-- Create table
+create table AC01_YS
+(
+  baz001 NUMBER(16),
+  baz002 NUMBER(16),
+  aac001 NUMBER(30) not null,
+  aac999 VARCHAR2(30) not null,
+  aac002 VARCHAR2(22),
+  aac003 VARCHAR2(50),
+  aac004 VARCHAR2(3),
+  aac005 VARCHAR2(3),
+  aac006 DATE,
+  aac058 VARCHAR2(3),
+  aac147 VARCHAR2(22),
+  bac337 VARCHAR2(30),
+  bac338 DATE,
+  bac339 VARCHAR2(100),
+  bac344 VARCHAR2(30),
+  bac345 DATE,
+  bac349 DATE,
+  bac351 VARCHAR2(3),
+  bac352 DATE,
+  bac353 DATE,
+  bze011 VARCHAR2(50),
+  bze036 DATE,
+  bze034 VARCHAR2(16),
+  aae011 VARCHAR2(50),
+  aae036 DATE,
+  aab034 VARCHAR2(16),
+  aaa027 VARCHAR2(6),
+  bac332 VARCHAR2(30) not null,
+  bac341 VARCHAR2(30),
+  bke049 VARCHAR2(3),
+  bac342 VARCHAR2(100),
+  bkf054 VARCHAR2(50)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table AC01_YS
+  is '医师人员基本信息';
+-- Add comments to the columns 
+comment on column AC01_YS.baz001
+  is '记录编号';
+comment on column AC01_YS.baz002
+  is '操作序号';
+comment on column AC01_YS.aac001
+  is '医师资格证书编号';
+comment on column AC01_YS.aac999
+  is '医师服务编码';
+comment on column AC01_YS.aac002
+  is '社保障号';
+comment on column AC01_YS.aac003
+  is '姓名';
+comment on column AC01_YS.aac004
+  is '性别';
+comment on column AC01_YS.aac005
+  is '民族';
+comment on column AC01_YS.aac006
+  is '出生日期';
+comment on column AC01_YS.aac058
+  is '证件类型';
+comment on column AC01_YS.aac147
+  is '证件号码';
+comment on column AC01_YS.bac337
+  is '执业医师类别';
+comment on column AC01_YS.bac338
+  is '执业资格取得时间';
+comment on column AC01_YS.bac339
+  is '医师执业范围';
+comment on column AC01_YS.bac344
+  is '职称';
+comment on column AC01_YS.bac345
+  is '职称取得时间';
+comment on column AC01_YS.bac349
+  is '本地化-备用';
+comment on column AC01_YS.bac351
+  is '本地化-备用';
+comment on column AC01_YS.bac352
+  is '本地化-备用';
+comment on column AC01_YS.bac353
+  is '本地化-备用';
+comment on column AC01_YS.bze011
+  is '创建人';
+comment on column AC01_YS.bze036
+  is '创建时间';
+comment on column AC01_YS.bze034
+  is '创建机构编码';
+comment on column AC01_YS.aae011
+  is '经办人';
+comment on column AC01_YS.aae036
+  is '经办时间';
+comment on column AC01_YS.aab034
+  is '经办机构编码';
+comment on column AC01_YS.aaa027
+  is '统筹区编码';
+comment on column AC01_YS.bac332
+  is '医师资格证书编号';
+comment on column AC01_YS.bac341
+  is '第一执业点医疗机构编码';
+comment on column AC01_YS.bke049
+  is '医师级别';
+comment on column AC01_YS.bac342
+  is '第一执业点医疗机构名称';
+comment on column AC01_YS.bkf054
+  is '医师执业证书编号';
+-- Create/Recreate indexes 
+create index IDX_AC01_YS_AAC002 on AC01_YS (AAC002)
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX_AC01_YS_AAC003 on AC01_YS (AAC003)
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX_AC01_YS_AAC147 on AC01_YS (AAC147)
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX_AC01_YS_BAZ001 on AC01_YS (BAZ001)
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX_AC01_YS_BAZ002 on AC01_YS (BAZ002)
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table AC01_YS
+  add constraint PK_AC01_YS primary key (AAC001)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table AC01_YS
+  add constraint IDX_AC01_YS_AAC999 unique (AAC999)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+
+-- Create table
+create table KC30
+(
+  akb020 VARCHAR2(20) not null,
+  bac332 VARCHAR2(30) not null,
+  aac001 VARCHAR2(30),
+  akz004 VARCHAR2(200) not null,
+  baz001 NUMBER(16),
+  baz002 NUMBER(16),
+  aae011 VARCHAR2(50),
+  aae036 DATE,
+  akz002 BLOB,
+  bze011 VARCHAR2(50),
+  bze036 DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  )
+nologging;
+-- Add comments to the table 
+comment on table KC30
+  is '医师提交材料信息';
+-- Add comments to the columns 
+comment on column KC30.akb020
+  is '医疗机构编号';
+comment on column KC30.bac332
+  is '医师资格证书编号';
+comment on column KC30.aac001
+  is '工号';
+comment on column KC30.akz004
+  is '材料类型';
+comment on column KC30.baz001
+  is '记录编号';
+comment on column KC30.baz002
+  is '操作序号';
+comment on column KC30.aae011
+  is '经办人';
+comment on column KC30.aae036
+  is '经办时间';
+comment on column KC30.akz002
+  is '材料';
+comment on column KC30.bze011
+  is '创建人';
+comment on column KC30.bze036
+  is '创建时间';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table KC30
+  add constraint PK_KC30 primary key (AKB020, BAC332, AKZ004)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+---------------------add by huangzhk 医师库新需求20190914 start-------------------------------------
+alter table kc29_yszc add (BKF060 VARCHAR2(3));
+comment on column kc29_yszc.BKF060 is '中成药处方资质标志';
+alter table kc29_yszc add (BKF061 VARCHAR2(3));
+comment on column  kc29_yszc.BKF061 is '中药饮片处方资质标志';
+
+alter table kc29_yssh add (BKF060 VARCHAR2(3));
+comment on column kc29_yssh.BKF060 is '中成药处方资质标志';
+alter table kc29_yssh add (BKF061 VARCHAR2(3));
+comment on column  kc29_yssh.BKF061 is '中药饮片处方资质标志';
+
+alter table KC29_YS_TMP add (BKF060 VARCHAR2(3));
+comment on column KC29_YS_TMP.BKF060 is '中成药处方资质标志';
+alter table KC29_YS_TMP add (BKF061 VARCHAR2(3));
+comment on column  KC29_YS_TMP.BKF061 is '中药饮片处方资质标志';
+
+CREATE OR REPLACE VIEW KC29_YTH AS
+SELECT
+BAZ001 BAZ001,
+BAZ002 BAZ002,
+AKC290 AKC290,
+AKB020 AKB020,
+BKF050 AAC001,
+'' AAC002,
+'' AAC003,
+'' AAC004,
+BKF053 BKC331,
+BKF086 AAC020,
+BKF055 BAC332,
+'' BAC337,
+'' BAC338,
+'' BAC339,
+BKF062 BAC340,
+BKF056 BAC341,
+BKF070 BAC342,
+BKF068 BAC343,
+'' BAC344,
+'' BAC345,
+BKF071 BAC349,
+AAE005 AAE005,
+BKF051 BAC350,
+AAE013 AAE003,
+HZ050 HZ050,
+BKE162 AKC292,
+BAE439 AKC293,
+'' AAC020_1,
+'' BAC344_1,
+'' BAC337_1,
+'' BAC339_1,
+'' BAC353,
+BKE160 BAC354,
+BKF080 BAC351,
+BKF077 BAC352,
+'' BKC331_1,
+BKF090 AAE011,
+BKF091 AAE036,
+BKE161 AAE012,
+BKF073 AAE013,
+BKF052 BAC355,
+'' BAC355_1,
+BKF054 BKF054,
+BKE049 BKE049,
+'' AAC058,
+BKE054 BKE054,
+BKF049 BKF049,
+BKF048 BKF048,
+BKF060 BKF060,
+BKF061 BKF061,
+BKF094 BKF094,
+BKF095 BKF095,
+BKF093 BKF093,
+BKF096 BKF096,
+BZE011 BZE011,
+BZE036 BZE036,
+AAA027 AAA027,
+bkf078 bkf078,
+BKA712 BKA712,
+BKA714 BKA714,
+BKA713 BKA713,
+AAE165 AAE165
+
+ from hzsi.kc29_yssh@hzyb;
+comment on column KC29_YTH.AKB020 is '医疗机构编号';
+comment on column KC29_YTH.AAC001 is '医护人员编号';
+comment on column KC29_YTH.AAC002 is '证件号码';
+comment on column KC29_YTH.BKC331 is '执业科别';
+comment on column KC29_YTH.AAC020 is '行政职务';
+comment on column KC29_YTH.BAC340 is '康复资质';
+comment on column KC29_YTH.BKE054 is '是否技术交流标志';
+comment on column KC29_YTH.BKF049 is '是否签约医师标志';
+comment on column KC29_YTH.BKF048 is '是否评估医师标志';
+comment on column KC29_YTH.BKF060 is '中成药处方资质标志';
+comment on column KC29_YTH.BKF061 is '中药饮片处方资质标志';
+comment on column KC29_YTH.BKF093 is '移动电话';
+comment on column KC29_YTH.BKF096 is '自由执业标志';
+
+CREATE OR REPLACE VIEW KC29_YX AS
+SELECT
+AKC290 AKC290,
+AKB020 AKB020,
+BKF050 AAC001,
+'' AAC002,
+'' AAC003,
+'' AAC004,
+BKF053 BKC331,
+BKF086 AAC020,
+BKF055 BAC332,
+'' BAC337,
+'' BAC338,
+'' BAC339,
+BKF062 BAC340,
+BKF056 BAC341,
+BKF070 BAC342,
+BKF068 BAC343,
+'' BAC344,
+'' BAC345,
+BKF071 BAC349,
+AAE005 AAE005,
+BKF051 BAC350,
+AAE013 AAE003,
+HZ050 HZ050,
+BKE162 AKC292,
+BAE439 AKC293,
+'' AAC020_1,
+'' BAC344_1,
+'' BAC337_1,
+'' BAC339_1,
+'' BAC353,
+BKE160 BAC354,
+BKF080 BAC351,
+BKF077 BAC352,
+'' BKC331_1,
+BKF090 AAE011,
+BKF091 AAE036,
+BKE161 AAE012,
+BKF073 AAE013,
+BKF052 BAC355,
+'' BAC355_1,
+BKF054 BKF054,
+BKE049 BKE049,
+'' AAC058,
+BKE054 BKE054,
+BKF049 BKF049,
+BKF048 BKF048,
+BKF060 BKF060,
+BKF061 BKF061,
+BKF094 BKF094,
+BKF095 BKF095,
+BKF093 BKF093,
+BKF096 BKF096,
+BZE011 BZE011,
+BZE036 BZE036,
+AAA027 AAA027,
+bkf078 bkf078,
+BKA712 BKA712
+
+ from hzsi.kc29_yssh@hzyb A
+WHERE A.AKC290 IN( select MAX(akc290) from  hzsi.kc29_yssh@hzyb WHERE  HZ050!='4' GROUP BY akb020,aaa027,BKF055);
+
+CREATE OR REPLACE VIEW KC29_YX_ALL AS
+SELECT
+AKC290 AKC290,
+AKB020 AKB020,
+BKF050 AAC001,
+'' AAC002,
+'' AAC003,
+'' AAC004,
+BKF053 BKC331,
+BKF086 AAC020,
+BKF055 BAC332,
+'' BAC337,
+'' BAC338,
+'' BAC339,
+BKF062 BAC340,
+BKF056 BAC341,
+BKF070 BAC342,
+BKF068 BAC343,
+'' BAC344,
+'' BAC345,
+BKF071 BAC349,
+AAE005 AAE005,
+BKF051 BAC350,
+AAE013 AAE003,
+HZ050 HZ050,
+BKE162 AKC292,
+BAE439 AKC293,
+'' AAC020_1,
+'' BAC344_1,
+'' BAC337_1,
+'' BAC339_1,
+'' BAC353,
+BKE160 BAC354,
+BKF080 BAC351,
+BKF077 BAC352,
+'' BKC331_1,
+BKF090 AAE011,
+BKF091 AAE036,
+BKE161 AAE012,
+BKF073 AAE013,
+BKF052 BAC355,
+'' BAC355_1,
+BKF054 BKF054,
+BKE049 BKE049,
+'' AAC058,
+BKE054 BKE054,
+BKF049 BKF049,
+BKF048 BKF048,
+BKF060 BKF060,
+BKF061 BKF061,
+BKF094 BKF094,
+BKF095 BKF095,
+BKF093 BKF093,
+BKF096 BKF096,
+BZE011 BZE011,
+BZE036 BZE036,
+AAA027 AAA027,
+bkf078 bkf078,
+AAE165 AAE165
+
+ from hzsi.kc29_yssh@hzyb A
+WHERE A.AKC290 IN( select MAX(akc290) from  hzsi.kc29_yssh@hzyb  GROUP BY akb020,aaa027,BKF055);
+
+
+-------------------------add by huangzhk 医师库新需求20190914 end---------------------------------
+
+
+
+
